@@ -1,0 +1,29 @@
+{
+  "title": "Welcome to the Attendance Rule Setup wizard!",
+  "description": "I'll guide you step-by-step through creating a new attendance rule for your organization. Let's make this process smooth and easy.",
+  "getStarted": "Get Started",
+  "language": {
+    "english": "English",
+    "hindi": "Hindi"
+  },
+  "question": {
+    "q1Title": "General Rule Setup",
+    "q1Main": "What would you like to name this attendance rule?",
+    "q1Sub": "Please provide a descriptive name for your rule",
+    "q2Main": "What is the status for this attendance rule?",
+    "q2Sub": "Select whether this rule will be immediately applied",
+    "q3Main": "Which company should this attendance rule apply to?",
+    "q3Sub": "Select the company where this rule will be implemented",
+    "companies": {
+      "sphinxWorldbiz": "Sphinx Worldbiz Ltd",
+      "shrmPro": "SHRMPro",
+      "sphinxWL": "SphinxWL"
+    },
+    "statusOptions": {
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  },
+  "back": "Back",
+  "next": "Next"
+}

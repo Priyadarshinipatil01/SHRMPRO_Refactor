@@ -1,0 +1,96 @@
+/* Header.css - Custom styles to complement Bootstrap */
+.container {
+    width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.card {
+    border-radius: 0.5rem; /* 8px */
+    overflow: hidden;
+    border: none;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.card-header {
+    background-color: #2962FF !important;
+    border-bottom: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.language-selector {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 0.25rem; /* 4px */
+    font-weight: 500;
+    font-size: 0.875rem; /* 14px */
+    cursor: pointer;
+}
+
+.circle-check {
+    width: 4.375rem; /* 70px */
+    height: 4.375rem; /* 70px */
+    background-color: white; /* White background */
+    border: 6px solid #2962FF; /* Blue border */
+    border-radius: 50%; /* Circular shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark {
+    color: #2962FF; /* Blue checkmark color */
+    font-size: 2.25rem; /* 36px */
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.5rem; /* 24px */
+    color: #333;
+}
+
+p {
+
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn-primary {
+    background-color: #2962FF;
+    border-color: #2962FF;
+    padding: 0.625rem 1.5rem; /* 10px 24px */
+    transition: background-color 0.2s;
+}
+.GetStarted{
+    width: 32%; 
+}
+.btn-primary:hover {
+    background-color: #1E4BD8;
+    border-color: #1E4BD8;
+}
+
+/* Header.css */
+.language-selector .dropdown-menu {
+    background-color: #007bff; /* Same as the header background */
+    width: 100%;
+}
+
+.language-selector .dropdown-item {
+    color: white; /* Ensure white text inside dropdown items */
+    width: 100%;
+}
+
+.language-selector .dropdown-item:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+.language-selector .btn-link {
+    color: white; /* Ensures the language button text is white */
+    width: 100%;
+}
+
+.language-selector .dropdown-toggle::after {
+    color: white; /* Ensures the chevron icon is white */
+}

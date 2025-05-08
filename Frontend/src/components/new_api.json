@@ -1,0 +1,233 @@
+{
+    "id": 1,
+    "schema_data": [
+      {
+        "key": "attendance_rule_name",
+        "question": "What unique name should we give this attendance rule set?",
+        "desc": "A unique name to identify this specific set of attendance rules.",
+        "example": "Office Staff - Standard Hours",
+        "type": "text",
+        "options": null,
+        "isenabled": null
+      },
+      {
+        "key": "status",
+        "question": "Is this rule currently 'Active' or 'Inactive'?",
+        "desc": "Determines if this rule is currently active or saved but not in use.",
+        "example": "Active",
+        "type": "dropdown",
+        "options": [
+          "Active",
+          "Inactive"
+        ],
+        "isenabled": null
+      },
+      {
+        "key": "company",
+        "question": "Which company does this rule apply to?",
+        "desc": "Select the specific company within your organization.",
+        "example": "Tech Solutions Global",
+        "type": "dropdown",
+        "options": [
+          "Shrm Pro",
+          "Vipro",
+          "Honda",
+          "Seimens"
+        ],
+        "isenabled": null
+      },
+      {
+        "key": "location",
+        "question": "Which work location (branch, site) does this rule apply to?",
+        "desc": "Select the specific work location.",
+        "example": "New York Head Office",
+        "type": "dropdown",
+        "options": [
+          "Noida",
+          "Pune",
+          "Haridwar",
+          "Gurugram"
+        ],
+        "isenabled": null
+      },
+      {
+        "key": "attendance_cycle_from",
+        "question": "On which day of the month does the attendance tracking cycle start?",
+        "desc": "Start day of the attendance tracking period.",
+        "example": "1",
+        "type": "text",
+        "options": null,
+        "isenabled": null
+      },
+      {
+        "key": "attendance_cycle_to",
+        "question": null,
+        "desc": null,
+        "example": null,
+        "type": "text",
+        "options": null,
+        "isenabled": null
+      },
+      {
+        "key": "flexible_working_hours",
+        "question": "Should employees under this rule have flexible start/end times (but complete a set number of hours)?",
+        "desc": "Allow flexible start/end times.",
+        "example": "Yes",
+        "type": "boolean",
+        "options": null,
+        "isenabled": null
+      },
+      {
+        "key": "attendance_lock",
+        "question": "How many days after an attendance cycle ends can records still be modified before locking?",
+        "desc": "Number of days records remain editable post-cycle.",
+        "example": "5",
+        "type": "integer",
+        "options": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "isenabled": null
+      },
+      {
+        "key": "spent_time_calculation",
+        "question": "How should total worked hours be calculated based on clock-in/out times?",
+        "desc": "Method for calculating total worked hours.",
+        "example": "Punch-In-Time",
+        "type": "dropdown",
+        "options": [
+          "Punch-In-Time",
+          "Shift-Time"
+        ],
+        "isenabled": null
+      },
+      {
+        "key": "relaxation_rule_enabled",
+        "question": "Do you want to configure Relaxation Rules (grace periods for late/early)?",
+        "desc": "Enable grace periods for late arrival / early departure.",
+        "example": "Yes/No",
+        "type": "boolean",
+        "options": null,
+        "isenabled": {
+          "Yes": [
+            {
+              "key": "permissible_grace_time",
+              "question": "What's the total  permissible time you want to give",
+              "desc": "Total grace time allowed across the entire cycle.",
+              "example": "01:00",
+              "type": "text"
+            },
+            {
+              "key": "grace_time",
+              "question": "What's the grace duration (HH:MM format) allowed for a *single* instance of late arrival or early departure?",
+              "desc": "Grace time for a single late/early instance.",
+              "example": "00:10",
+              "type": "text"
+            },
+            {
+              "key": "no_of_instances_relaxation",
+              "question": "How many times can the single instance grace time be used per cycle?",
+              "desc": "Max number of times single grace can be used.",
+              "example": "3",
+              "type": "integer"
+            },
+            {
+              "key": "relaxation_option",
+              "question": "Should the grace time/instances apply to Late Coming, Early Going, or Both?",
+              "desc": "Apply grace rules to which events?",
+              "example": "Late Coming & Early Going",
+              "type": "dropdown",
+              "options": [
+                "Late Coming",
+                "Early Going",
+                "Late Coming & Early Going"
+              ]
+            },
+            {
+              "key": "relaxation_deduction",
+              "question": " How do want realaxtion dudection",
+              "desc": "Alolow relaxation",
+              "example": "True/False",
+              "type": "boolean",
+              "isenabled": {
+                "Yes": [
+                  {
+                    "key": "deduction_option",
+                    "question": "How do you want to deduct ",
+                    "desc": "Duduction of relaxation.",
+                    "example": "00:10",
+                    "type": "dropdown",
+                    "options": [
+                      "Instances",
+                      "Duration",
+                      "Instances & Duration"
+                    ]
+                  },
+                  {
+                    "key": "Minimum_hrs_for_full_day",
+                    "question": "What's the Minimum_hrs_for_full_day (HH:MM format) need to done?",
+                    "desc": "Minimun No. of hours required for each employee to spent for full day .",
+                    "example": "08:00",
+                    "type": "text"
+                  }
+                ],
+                "No": ""
+              }
+            }
+          ],
+          "No": ""
+        }
+      },
+      {
+        "key": "process_short_leave",
+        "question": "Mark Weekoff/Holiday as absent if employee was absent on the *previous* working day?",
+        "desc": "Enable sandwich rule for absence before weekoff/holiday.",
+        "example": "No/Yes",
+        "type": "boolean",
+        "options": null,
+        "isenabled": {
+          "Yes": [
+            {
+              "key": "grace_time",
+              "question": "Mark Weekoff/Holiday as absent if employee was absent on the *previous* working day?",
+              "desc": "Enable sandwich rule for absence before weekoff/holiday.",
+              "example": "No/Yes",
+              "type": "boolean"
+            },
+            {
+              "key": "no_of_instances",
+              "question": "Mark Weekoff/Holiday as absent if employee was absent on the *previous* working day?",
+              "desc": "Enable sandwich rule for absence before weekoff/holiday.",
+              "example": "No/Yes",
+              "type": "boolean"
+            }
+          ]
+        }
+      },
+      {
+        "key": "Mark Weekly Off and Holiday as absent",
+        "question": "do you want to Mark Weekly Off and Holiday as absent If the employee was absent on the previous day ",
+        "desc": "Mark Weekly Off and Holiday as absent if you want ",
+        "example": "No/Yes",
+        "type": "boolean",
+        "options": null,
+        "isenabled": null
+      },
+      {
+        "key": "Mark Weekly Off and Holiday as absent",
+        "question": "do you want to Mark Weekly Off and Holiday as absent If the employee was absent on the next day ",
+        "desc": "Mark Weekly Off and Holiday as absent if you want ",
+        "example": "No/Yes",
+        "type": "boolean",
+        "options": null,
+        "isenabled": null
+      }
+    ]
+  }
