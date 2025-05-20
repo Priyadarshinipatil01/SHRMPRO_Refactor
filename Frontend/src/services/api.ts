@@ -1,7 +1,7 @@
 export const fetchSchemaData = async (urlId: number) => {
   try {
     const response = await fetch(
-      'https://8cc42502-abd1-4ee2-921d-52a154bd3185.mock.pstmn.io/get_schema',
+      'https://4b3ed538-a09f-47cc-ab41-9f6815ef1c57.mock.pstmn.io/get_schema',
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

@@ -169,20 +169,56 @@ const Header: React.FC = () => {
           </select>
         );
       case 'boolean':
-        return (
-          <div className="form-check mb-3">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              checked={formData[current.key] || false}
-              onChange={(e) => handleChange(current.key, e.target.checked)}
-              id={current.key}
-            />
-            <label className="form-check-label" htmlFor={current.key}>
-              {current.question}
-            </label>
-          </div>
-        );
+  // Override checkbox with radio buttons for this specific question
+if (current.key === 'flexible_working_hours') {
+
+    return (
+      <div className="mb-3">
+        <label className="form-label">{current.question}</label>
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            type="radio"
+            name={current.key}
+            value="Yes"
+            checked={formData[current.key] === 'Yes'}
+            onChange={() => handleChange(current.key, 'Yes')}
+            id={`${current.key}-yes`}
+          />
+          <label className="form-check-label" htmlFor={`${current.key}-yes`}>Yes</label>
+        </div>
+        <div className="form-check">
+          <input
+            className="form-check-input"
+            type="radio"
+            name={current.key}
+            value="No"
+            checked={formData[current.key] === 'No'}
+            onChange={() => handleChange(current.key, 'No')}
+            id={`${current.key}-no`}
+          />
+          <label className="form-check-label" htmlFor={`${current.key}-no`}>No</label>
+        </div>
+      </div>
+    );
+  }
+
+  // Default rendering for other boolean fields
+  return (
+    <div className="form-check mb-3">
+      <input
+        className="form-check-input"
+        type="checkbox"
+        checked={formData[current.key] || false}
+        onChange={(e) => handleChange(current.key, e.target.checked)}
+        id={current.key}
+      />
+      <label className="form-check-label" htmlFor={current.key}>
+        {current.question}
+      </label>
+    </div>
+  );
+
       default:
         return null;
     }
